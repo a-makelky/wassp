@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASSP Visual Brand Kit</title>
+  <meta name="description" content="A visual brand kit and audit for the Wyoming Association of Secondary School Principals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cocoa: #492f24;
+      --saddle: #6d4217;
+      --gold: #9c7129;
+      --bright-gold: #fcbf2c;
+      --charcoal: #333333;
+      --smoke: #545454;
+      --paper: #f7f1e4;
+      --cream: #fffaf0;
+      --sand: #e8dcc3;
+      --linen: #efe7d5;
+      --white: #ffffff;
+      --black: #111111;
+      --shadow: 0 24px 50px rgba(73, 47, 36, 0.16);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--charcoal);
+      background:
+        radial-gradient(circle at top left, rgba(252, 191, 44, 0.28), transparent 30%),
+        radial-gradient(circle at top right, rgba(156, 113, 41, 0.18), transparent 22%),
+        linear-gradient(180deg, #fbf6ec 0%, #f2e7d2 44%, #f7f1e7 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(73, 47, 36, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(73, 47, 36, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.66), transparent 90%);
+    }
+
+    a {
+      color: var(--cocoa);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--gold);
+    }
+
+    .page-shell {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 88px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding: 14px 18px;
+      border: 1px solid rgba(73, 47, 36, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.72);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(73, 47, 36, 0.08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cocoa);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--bright-gold), var(--gold));
+      box-shadow: 0 0 0 5px rgba(252, 191, 44, 0.18);
+    }
+
+    .topbar-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(73, 47, 36, 0.06);
+      color: var(--cocoa);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 44px;
+      border-radius: calc(var(--radius-xl) + 8px);
+      background:
+        linear-gradient(135deg, rgba(73, 47, 36, 0.98), rgba(109, 66, 23, 0.94) 48%, rgba(156, 113, 41, 0.92) 100%);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(252, 191, 44, 0.34), transparent 20%),
+        radial-gradient(circle at 72% 72%, rgba(255, 255, 255, 0.08), transparent 18%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 0.96;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .chip.confirmed {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .chip.observed {
+      background: rgba(252, 191, 44, 0.16);
+      border: 1px solid rgba(252, 191, 44, 0.24);
+      color: #fff2c3;
+    }
+
+    .chip.inferred {
+      background: rgba(17, 17, 17, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat-card {
+      padding: 18px 18px 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.25rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card span {
+      display: block;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-top: 30px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 252, 246, 0.82);
+      border: 1px solid rgba(73, 47, 36, 0.1);
+      box-shadow: 0 14px 35px rgba(73, 47, 36, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(73, 47, 36, 0.12);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1;
+      color: var(--cocoa);
+    }
+
+    .section-header p {
+      max-width: 56ch;
+      margin: 0;
+      color: rgba(51, 51, 51, 0.82);
+      line-height: 1.7;
+    }
+
+    .summary-grid,
+    .logo-grid,
+    .swatch-grid,
+    .type-grid,
+    .component-grid,
+    .pattern-grid,
+    .gap-grid,
+    .source-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .summary-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .logo-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .swatch-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .type-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .component-grid,
+    .pattern-grid,
+    .gap-grid,
+    .source-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid rgba(73, 47, 36, 0.1);
+      box-shadow: 0 12px 28px rgba(73, 47, 36, 0.08);
+      animation: rise 0.65s ease both;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--bright-gold), var(--gold), var(--cocoa));
+      opacity: 0.72;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      color: var(--cocoa);
+      font-size: 1.06rem;
+    }
+
+    .panel p,
+    .panel li {
+      color: rgba(51, 51, 51, 0.84);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .status-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .status-tag.confirmed {
+      background: rgba(73, 47, 36, 0.09);
+      color: var(--cocoa);
+    }
+
+    .status-tag.observed {
+      background: rgba(252, 191, 44, 0.18);
+      color: var(--gold);
+    }
+
+    .status-tag.inferred {
+      background: rgba(51, 51, 51, 0.1);
+      color: var(--charcoal);
+    }
+
+    .statements {
+      display: grid;
+      gap: 10px;
+    }
+
+    .statement {
+      padding: 14px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(247, 241, 228, 0.9), rgba(255, 255, 255, 1));
+      border: 1px solid rgba(73, 47, 36, 0.08);
+    }
+
+    .statement strong {
+      color: var(--cocoa);
+    }
+
+    .logo-stage {
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+      padding: 22px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      background:
+        radial-gradient(circle at top, rgba(252, 191, 44, 0.16), transparent 36%),
+        linear-gradient(180deg, rgba(239, 231, 213, 0.94), rgba(255, 255, 255, 1));
+      border: 1px solid rgba(73, 47, 36, 0.08);
+    }
+
+    .logo-stage.dark {
+      background:
+        radial-gradient(circle at top, rgba(252, 191, 44, 0.2), transparent 28%),
+        linear-gradient(180deg, #151515, #000000);
+    }
+
+    .logo-stage img {
+      max-width: 100%;
+      max-height: 220px;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.14));
+    }
+
+    .site-icon {
+      padding: 26px 18px;
+    }
+
+    .site-icon img {
+      max-height: 142px;
+    }
+
+    .meta-line {
+      margin-top: 14px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: rgba(73, 47, 36, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .swatch-card {
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid rgba(73, 47, 36, 0.1);
+      box-shadow: 0 10px 25px rgba(73, 47, 36, 0.08);
+      animation: rise 0.65s ease both;
+    }
+
+    .swatch-top {
+      min-height: 118px;
+      padding: 16px;
+      color: var(--white);
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .swatch-top.light {
+      color: var(--charcoal);
+    }
+
+    .swatch-top span {
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .swatch-bottom {
+      padding: 16px 18px 18px;
+    }
+
+    .swatch-bottom strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--cocoa);
+      font-size: 1rem;
+    }
+
+    .swatch-bottom code {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      background: rgba(73, 47, 36, 0.06);
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .type-card {
+      display: grid;
+      gap: 16px;
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(247, 241, 228, 0.82));
+      border: 1px solid rgba(73, 47, 36, 0.08);
+      box-shadow: 0 10px 25px rgba(73, 47, 36, 0.08);
+    }
+
+    .type-card h3 {
+      margin: 0;
+      color: var(--cocoa);
+    }
+
+    .type-sample {
+      padding: 18px 0;
+      border-top: 1px solid rgba(73, 47, 36, 0.08);
+    }
+
+    .type-sample:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .sample-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: rgba(73, 47, 36, 0.68);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .poppins-display {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--cocoa);
+    }
+
+    .poppins-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .serif-display {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      line-height: 0.95;
+      color: var(--saddle);
+    }
+
+    .subline {
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: rgba(51, 51, 51, 0.82);
+    }
+
+    .mock-nav {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(73, 47, 36, 0.12);
+      background: var(--white);
+    }
+
+    .mock-nav-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(73, 47, 36, 0.06);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(73, 47, 36, 0.78);
+    }
+
+    .mock-nav-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 16px;
+      background: linear-gradient(135deg, var(--cocoa), var(--saddle));
+      color: var(--white);
+    }
+
+    .mock-nav-logo {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+
+    .mock-nav-logo img {
+      width: 86%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .mock-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: end;
+    }
+
+    .mock-links span {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .mock-links span.active {
+      background: rgba(252, 191, 44, 0.2);
+      color: #fff0c0;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .button-demo {
+      border: 0;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font: 600 0.9rem/1 "Poppins", sans-serif;
+      letter-spacing: 0.01em;
+      cursor: default;
+      box-shadow: 0 8px 18px rgba(73, 47, 36, 0.12);
+    }
+
+    .button-demo.primary {
+      color: var(--white);
+      background: var(--cocoa);
+    }
+
+    .button-demo.gold {
+      color: var(--white);
+      background: var(--gold);
+    }
+
+    .button-demo.bright {
+      color: var(--black);
+      background: var(--bright-gold);
+    }
+
+    .button-demo.neutral {
+      color: var(--white);
+      background: var(--smoke);
+    }
+
+    .button-note {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: rgba(51, 51, 51, 0.82);
+    }
+
+    .form-mock {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .field {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(73, 47, 36, 0.12);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(247, 241, 228, 0.72));
+      font-size: 0.92rem;
+      color: rgba(51, 51, 51, 0.7);
+    }
+
+    .field.large {
+      min-height: 84px;
+    }
+
+    .control-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .video-controls {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .icon-button {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 1.1rem;
+      box-shadow: 0 10px 18px rgba(17, 17, 17, 0.18);
+    }
+
+    .footer-mock {
+      margin-top: 14px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--cocoa);
+      color: var(--white);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .footer-box {
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom {
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .pattern {
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(247, 241, 228, 0.8));
+      border: 1px solid rgba(73, 47, 36, 0.08);
+      box-shadow: 0 10px 24px rgba(73, 47, 36, 0.08);
+    }
+
+    .pattern h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--cocoa);
+    }
+
+    .wireframe {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .wireframe span {
+      display: block;
+      border-radius: 12px;
+      background: rgba(73, 47, 36, 0.08);
+      border: 1px solid rgba(73, 47, 36, 0.08);
+    }
+
+    .wireframe .w-top {
+      height: 26px;
+      background: rgba(73, 47, 36, 0.14);
+    }
+
+    .wireframe .w-logo {
+      height: 76px;
+      background: linear-gradient(135deg, rgba(73, 47, 36, 0.2), rgba(252, 191, 44, 0.22));
+    }
+
+    .wireframe .w-nav {
+      height: 54px;
+      background: linear-gradient(135deg, rgba(73, 47, 36, 0.88), rgba(109, 66, 23, 0.78));
+    }
+
+    .wireframe .w-hero {
+      height: 150px;
+      background: linear-gradient(135deg, rgba(156, 113, 41, 0.28), rgba(73, 47, 36, 0.18));
+    }
+
+    .wireframe .w-title {
+      height: 36px;
+      width: 54%;
+    }
+
+    .wireframe .w-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: transparent;
+      border: 0;
+      padding: 0;
+    }
+
+    .wireframe .w-columns span {
+      min-height: 92px;
+    }
+
+    .wireframe .w-footer {
+      height: 84px;
+      background: linear-gradient(135deg, rgba(73, 47, 36, 0.9), rgba(109, 66, 23, 0.85));
+    }
+
+    .gap-card {
+      padding: 22px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 243, 219, 0.9));
+      border: 1px solid rgba(156, 113, 41, 0.18);
+      box-shadow: 0 12px 28px rgba(109, 66, 23, 0.08);
+    }
+
+    .gap-card h3 {
+      margin: 0 0 10px;
+      color: var(--cocoa);
+    }
+
+    .gap-card p {
+      margin: 0;
+      color: rgba(51, 51, 51, 0.84);
+      line-height: 1.7;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .source-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(73, 47, 36, 0.04);
+      border: 1px solid rgba(73, 47, 36, 0.08);
+    }
+
+    .source-item span {
+      display: block;
+      font-size: 0.9rem;
+      color: rgba(51, 51, 51, 0.82);
+    }
+
+    .source-kind {
+      white-space: nowrap;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(73, 47, 36, 0.08);
+      color: var(--cocoa);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .note-band {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(252, 191, 44, 0.18), rgba(255, 255, 255, 0.92));
+      border: 1px solid rgba(156, 113, 41, 0.18);
+      color: rgba(51, 51, 51, 0.88);
+      line-height: 1.65;
+    }
+
+    .footer-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .footer-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .footer-actions .solid {
+      background: var(--cocoa);
+      color: var(--white);
+      box-shadow: 0 12px 24px rgba(73, 47, 36, 0.18);
+    }
+
+    .footer-actions .ghost {
+      border: 1px solid rgba(73, 47, 36, 0.16);
+      color: var(--cocoa);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: rgba(73, 47, 36, 0.68);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .logo-grid,
+      .summary-grid,
+      .swatch-grid,
+      .type-grid,
+      .component-grid,
+      .pattern-grid,
+      .gap-grid,
+      .source-grid,
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: 18px 14px 52px;
+      }
+
+      .topbar {
+        border-radius: 22px;
+      }
+
+      .hero,
+      .section {
+        padding: 22px;
+      }
+
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      .mock-nav-main {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .mock-links {
+        justify-content: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="topbar">
+      <div class="eyebrow">WASSP Visual Brand Kit</div>
+      <div class="topbar-links">
+        <a href="visual-brand-audit.md">Open Audit Notes</a>
+        <a href="https://www.wassp.org/" target="_blank" rel="noreferrer">View Live Site</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badges">
+            <span class="chip confirmed">Current-state audit</span>
+            <span class="chip observed">Brown + gold web system</span>
+            <span class="chip inferred">Western institutional identity</span>
+          </div>
+          <h1>Wyoming Association of Secondary School Principals</h1>
+          <p>
+            This page translates the research into a visual brand board. It does not force a final
+            canonical system. Instead, it shows the brand language that exists today across logos,
+            typography, color, interface patterns, layout structures, and the tensions that still
+            need decisions.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <article class="stat-card">
+            <strong>3</strong>
+            <span>active logo treatments across local assets and live web usage</span>
+          </article>
+          <article class="stat-card">
+            <strong>5</strong>
+            <span>core web colors confirmed in the live SmartSites skin</span>
+          </article>
+          <article class="stat-card">
+            <strong>1</strong>
+            <span>primary production web typeface: Poppins</span>
+          </article>
+          <article class="stat-card">
+            <strong>4</strong>
+            <span>core page patterns sampled: home, about, contact, conferences</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="snapshot">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Snapshot</div>
+          <h2>What the brand feels like right now</h2>
+        </div>
+        <p>
+          The strongest identity signal is the Western boot-and-hat iconography. The website itself
+          is more restrained and institutional: dark cocoa navigation, warm gold accents, clean
+          Poppins typography, and a SmartSites structure underneath.
+        </p>
+      </div>
+
+      <div class="summary-grid">
+        <article class="panel">
+          <div class="status-row">
+            <span class="status-tag confirmed">Confirmed</span>
+          </div>
+          <h3>Web identity anchor</h3>
+          <p>The live site is built around a cocoa-and-gold UI palette with Poppins carrying almost all public-facing typography.</p>
+        </article>
+
+        <article class="panel">
+          <div class="status-row">
+            <span class="status-tag observed">Observed</span>
+          </div>
+          <h3>Logo personality</h3>
+          <p>The supplied logo files are richer, more illustrative, and more tactile than the live site header, especially in the leather shading and metallic gold tones.</p>
+        </article>
+
+        <article class="panel">
+          <div class="status-row">
+            <span class="status-tag confirmed">Confirmed</span>
+          </div>
+          <h3>Header behavior</h3>
+          <p>The live header only displays the icon treatment, not the association name inside the logo graphic itself.</p>
+        </article>
+
+        <article class="panel">
+          <div class="status-row">
+            <span class="status-tag inferred">Inferred</span>
+          </div>
+          <h3>System maturity</h3>
+          <p>WASSP already has a recognizable visual voice, but not yet a documented hierarchy for how the marks, palette, and web UI should work together.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="logos">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Logos</div>
+          <h2>Three distinct logo treatments</h2>
+        </div>
+        <p>
+          The current system behaves like a family of related marks rather than a clearly defined
+          primary-secondary logo hierarchy.
+        </p>
+      </div>
+
+      <div class="logo-grid">
+        <article class="panel">
+          <div class="logo-stage dark">
+            <img src="wassp%20letterhead.png" alt="WASSP letterhead mark">
+          </div>
+          <div class="status-row">
+            <span class="status-tag observed">Observed</span>
+            <span class="status-tag inferred">Print-first</span>
+          </div>
+          <h3>Letterhead mark</h3>
+          <div class="statements">
+            <div class="statement">
+              <strong>Portrait emblem.</strong> Curved WASSP lettering above, Wyoming below, with a detailed boot, hat, and spur composition.
+            </div>
+            <div class="statement">
+              <strong>Richest materiality.</strong> Metallic gold lettering, leather browns, black hat/background, and silver spur details make this the most tactile mark.
+            </div>
+            <div class="statement">
+              <strong>Best fit.</strong> Stationery, ceremonial applications, or merchandise rather than compact digital UI placements.
+            </div>
+          </div>
+          <div class="meta-line">1152 x 1472 px local asset</div>
+        </article>
+
+        <article class="panel">
+          <div class="logo-stage">
+            <img src="wassp%20horizontal%20logo.png" alt="WASSP horizontal logo">
+          </div>
+          <div class="status-row">
+            <span class="status-tag observed">Observed</span>
+            <span class="status-tag inferred">Most adaptable</span>
+          </div>
+          <h3>Horizontal wordmark</h3>
+          <div class="statements">
+            <div class="statement">
+              <strong>Institutional lockup.</strong> Serif WASSP wordmark, spelled-out association name, and boot icon create the clearest full-name signature.
+            </div>
+            <div class="statement">
+              <strong>Color drift.</strong> The wordmark leans warmer and more orange than the live site's cocoa-and-gold web palette.
+            </div>
+            <div class="statement">
+              <strong>Best fit.</strong> Documents, sponsorship materials, presentations, banners, and any place where name clarity matters.
+            </div>
+          </div>
+          <div class="meta-line">488 x 214 px local asset</div>
+        </article>
+
+        <article class="panel">
+          <div class="logo-stage site-icon">
+            <img src="https://files.smartsites.parentsquare.com/4229/design_img__j3ovp3.png" alt="Live WASSP header icon">
+          </div>
+          <div class="status-row">
+            <span class="status-tag confirmed">Confirmed</span>
+            <span class="status-tag observed">Icon only</span>
+          </div>
+          <h3>Live website header mark</h3>
+          <div class="statements">
+            <div class="statement">
+              <strong>Simplified silhouette.</strong> The site currently uses a flat brown boot-and-hat icon with no internal wordmark.
+            </div>
+            <div class="statement">
+              <strong>Web-friendly.</strong> It is visually lightweight and easy to fit into the masthead, but it does not carry the full organization name.
+            </div>
+            <div class="statement">
+              <strong>Tradeoff.</strong> Recognition depends on surrounding navigation, footer copy, and page context rather than the logo alone.
+            </div>
+          </div>
+          <div class="meta-line">1200 x 350 px remote site asset</div>
+        </article>
+      </div>
+
+      <div class="note-band">
+        <strong>Key tension:</strong> the local assets show a fuller, more expressive brand voice than the live site header.
+        The most legible full-name logo is not the one currently used on the website.
+      </div>
+    </section>
+
+    <section class="section" id="color">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Color System</div>
+          <h2>Core web palette and the logo-only variations</h2>
+        </div>
+        <p>
+          The website has a stable cocoa-and-gold core. The logo art widens that palette with more
+          illustrative browns, metallic gold, black, and leather tones.
+        </p>
+      </div>
+
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-top" style="background:#492f24;">
+            <span>Primary web color</span>
+            <strong>Cocoa</strong>
+          </div>
+          <div class="swatch-bottom">
+            <code>#492F24</code>
+            <strong>Navigation, footer, links, main CTA styling</strong>
+            <p>Closest thing to a primary WASSP web brand color. It anchors the interface.</p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch-top" style="background:#9c7129;">
+            <span>Accent</span>
+            <strong>Warm gold</strong>
+          </div>
+          <div class="swatch-bottom">
+            <code>#9C7129</code>
+            <strong>Hover, active, dropdown, highlighted states</strong>
+            <p>The most consistent accent color on the live site.</p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch-top light" style="background:#fcbf2c;">
+            <span>Highlight</span>
+            <strong>Bright gold</strong>
+          </div>
+          <div class="swatch-bottom">
+            <code>#FCBF2C</code>
+            <strong>Animated hero CTA and remapped danger button</strong>
+            <p>Energetic and attention-grabbing, but not consistently tied to one role.</p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch-top" style="background:#333333;">
+            <span>Text</span>
+            <strong>Charcoal</strong>
+          </div>
+          <div class="swatch-bottom">
+            <code>#333333</code>
+            <strong>Body copy, titles, supporting text</strong>
+            <p>The primary readable neutral across the live site.</p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch-top light" style="background:#ffffff;">
+            <span>Contrast</span>
+            <strong>White</strong>
+          </div>
+          <div class="swatch-bottom">
+            <code>#FFFFFF</code>
+            <strong>Text on dark surfaces, wells, and spacing relief</strong>
+            <p>Used cleanly and consistently, especially in navigation and footer areas.</p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch-top" style="background:#545454;">
+            <span>Secondary neutral</span>
+            <strong>Charcoal button</strong>
+          </div>
+          <div class="swatch-bottom">
+            <code>#545454</code>
+            <strong>Contact page submit button via btn-warning</strong>
+            <p>Useful as a neutral, but it reads less branded than the cocoa and gold options.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="component-grid" style="margin-top:18px;">
+        <article class="panel">
+          <div class="status-row">
+            <span class="status-tag observed">Observed</span>
+          </div>
+          <h3>Logo-only color range</h3>
+          <p>The local marks widen the palette with warmer orange-brown wordmark tones, metallic gold lettering, leather tan, black hat detail, and silver spur hardware.</p>
+        </article>
+
+        <article class="panel">
+          <div class="status-row">
+            <span class="status-tag confirmed">Confirmed</span>
+          </div>
+          <h3>Platform colors to ignore</h3>
+          <p>Bootstrap and SmartSites still expose blues, greens, and reds in inherited utility/admin styles. They should not be mistaken for core WASSP brand colors.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Typography</div>
+          <h2>Modern web type plus a more traditional logo voice</h2>
+        </div>
+        <p>
+          The live site is decisively Poppins-led. The logo files, especially the horizontal lockup,
+          introduce a more classic and formal serif personality.
+        </p>
+      </div>
+
+      <div class="type-grid">
+        <article class="type-card">
+          <h3>Live website type system</h3>
+          <div class="type-sample">
+            <span class="sample-label">Primary display / nav / buttons</span>
+            <div class="poppins-display">Poppins carries the public-facing web identity.</div>
+          </div>
+          <div class="type-sample">
+            <span class="sample-label">Body copy</span>
+            <div class="poppins-body">
+              A clean, modern sans serif keeps the site readable and contemporary. It appears in body
+              text, page titles, nav labels, button labels, and footer copy.
+            </div>
+          </div>
+          <div class="type-sample">
+            <span class="sample-label">Current role</span>
+            <div class="subline">
+              Confirmed use: body, nav, buttons, page titles, footer, and most branded modules on the site.
+            </div>
+          </div>
+        </article>
+
+        <article class="type-card">
+          <h3>Logo voice</h3>
+          <div class="type-sample">
+            <span class="sample-label">Horizontal logo impression</span>
+            <div class="serif-display">WASSP</div>
+          </div>
+          <div class="type-sample">
+            <span class="sample-label">Supporting signature</span>
+            <div class="subline">
+              Wyoming Association of Secondary School Principals
+            </div>
+          </div>
+          <div class="type-sample">
+            <span class="sample-label">Current tension</span>
+            <div class="subline">
+              The traditional serif energy of the logo is not yet translated into a documented web
+              hierarchy, so the relationship between print/logo personality and web typography remains open.
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="section-header">
+        <div>
+          <div class="kicker">UI Components</div>
+          <h2>How the brand shows up in interface pieces</h2>
+        </div>
+        <p>
+          The strongest brand moves on the site come from navigation color, type, footer treatment,
+          and the occasional brighter hero CTA. Inputs and some controls remain closer to platform defaults.
+        </p>
+      </div>
+
+      <div class="component-grid">
+        <article class="panel">
+          <h3>Header and navigation</h3>
+          <div class="mock-nav">
+            <div class="mock-nav-top">
+              <span>Home</span>
+              <span>About Us</span>
+              <span>Board of Directors</span>
+              <span>Contact</span>
+            </div>
+            <div class="mock-nav-main">
+              <div class="mock-nav-logo">
+                <img src="https://files.smartsites.parentsquare.com/4229/design_img__j3ovp3.png" alt="WASSP live icon">
+              </div>
+              <div class="mock-links">
+                <span class="active">Home</span>
+                <span>About</span>
+                <span>Membership</span>
+                <span>Conferences</span>
+                <span>Scholarships</span>
+              </div>
+            </div>
+          </div>
+          <p class="button-note">Brown base, white type, and gold active states make the nav the clearest expression of the live web brand.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Button hierarchy in practice</h3>
+          <div class="button-row">
+            <button class="button-demo primary" type="button">.btn-success</button>
+            <button class="button-demo gold" type="button">.btn-primary</button>
+            <button class="button-demo bright" type="button">.btn-danger</button>
+            <button class="button-demo neutral" type="button">.btn-warning</button>
+          </div>
+          <p class="button-note">
+            The visual mapping is branded, but the semantics are inconsistent. A "danger" button is
+            bright gold, while the contact CTA is charcoal via the warning class.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h3>Contact form pattern</h3>
+          <div class="form-mock">
+            <div class="field-row">
+              <div class="field">First Name</div>
+              <div class="field">Last Name</div>
+            </div>
+            <div class="field-row">
+              <div class="field">Email</div>
+              <div class="field">Phone</div>
+            </div>
+            <div class="field large">Contact Address</div>
+            <div class="field large">Contact Message</div>
+          </div>
+          <div class="control-row">
+            <button class="button-demo neutral" type="button">Send Message</button>
+            <span class="subline">Branding appears more in the CTA and surrounding layout than in the inputs themselves.</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Media controls and footer pattern</h3>
+          <div class="video-controls">
+            <div class="icon-button">&#9654;</div>
+            <div class="icon-button">&#10074;&#10074;</div>
+            <div class="icon-button">&#9835;</div>
+          </div>
+          <p class="button-note">The featured-video controls read as platform defaults: black circles and white glyphs.</p>
+          <div class="footer-mock">
+            <div class="footer-top">
+              <div class="footer-box">
+                <strong>Wyoming Association of Secondary School Principals</strong>
+                <div class="subline" style="color:rgba(255,255,255,0.82); margin-top:8px;">Box 601, Guernsey, WY 82214<br>307-331-1028</div>
+              </div>
+              <div class="footer-box">
+                <strong>Important Links</strong>
+                <div class="subline" style="color:rgba(255,255,255,0.82); margin-top:8px;">Home, NASSP, Contact Us, Accessibility</div>
+              </div>
+            </div>
+            <div class="footer-bottom">The footer is one of the most coherent branded areas on the entire site.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="patterns">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Layout Patterns</div>
+          <h2>Repeated page structures</h2>
+        </div>
+        <p>
+          The site is structurally consistent even where the component polish varies. These diagrams
+          show the recurring shape of the experience rather than pixel-perfect screenshots.
+        </p>
+      </div>
+
+      <div class="pattern-grid">
+        <article class="pattern">
+          <h3>Homepage</h3>
+          <div class="wireframe">
+            <span class="w-top"></span>
+            <span class="w-logo"></span>
+            <span class="w-nav"></span>
+            <span class="w-hero"></span>
+          </div>
+          <p>Layered header, utility links, primary navigation, then a full-width video hero with brand-colored supporting styles.</p>
+        </article>
+
+        <article class="pattern">
+          <h3>Internal content page</h3>
+          <div class="wireframe">
+            <span class="w-top"></span>
+            <span class="w-logo"></span>
+            <span class="w-nav"></span>
+            <span class="w-title"></span>
+            <span class="w-columns">
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <p>Visible page title followed by stacked content modules, often arranged in column-based SmartSites layouts.</p>
+        </article>
+
+        <article class="pattern">
+          <h3>Contact page</h3>
+          <div class="wireframe">
+            <span class="w-top"></span>
+            <span class="w-logo"></span>
+            <span class="w-nav"></span>
+            <span class="w-title"></span>
+            <span class="w-columns">
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <p>Address and social details sit beside a structured inquiry form. It is the clearest member-facing interaction pattern in the sample set.</p>
+        </article>
+
+        <article class="pattern">
+          <h3>Footer</h3>
+          <div class="wireframe">
+            <span class="w-footer"></span>
+          </div>
+          <p>Wide brown footer, white text, link clusters, association name, contact details, and platform/legal content anchored in one consistent block.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="gaps">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Brand Gaps</div>
+          <h2>What is still unresolved</h2>
+        </div>
+        <p>
+          The visual language is already strong enough to build from. What is missing is a decision
+          layer that turns these related parts into one governable system.
+        </p>
+      </div>
+
+      <div class="gap-grid">
+        <article class="gap-card">
+          <h3>No single primary logo standard</h3>
+          <p>Three marks are active across local assets and live usage, but there is no explicit hierarchy showing which one leads on web, print, social, and merchandise.</p>
+        </article>
+
+        <article class="gap-card">
+          <h3>Palette alignment is incomplete</h3>
+          <p>The website is disciplined around cocoa and gold, while the supplied logos lean richer, warmer, and more illustrative. Both feel related, but they are not yet normalized.</p>
+        </article>
+
+        <article class="gap-card">
+          <h3>Button semantics are muddy</h3>
+          <p>Bootstrap classes have been visually remapped, which makes the UI look branded but weakens meaning and maintainability. The color-role system needs a clean reset.</p>
+        </article>
+
+        <article class="gap-card">
+          <h3>Core web identity assets are incomplete</h3>
+          <p>The live site still uses a default favicon and default share image, so key brand touchpoints outside the page chrome remain generic.</p>
+        </article>
+
+        <article class="gap-card">
+          <h3>Responsive logo placement is brittle</h3>
+          <p>The header uses many breakpoint-specific spacing adjustments, which suggests the web logo rules have not been simplified into a stable system.</p>
+        </article>
+
+        <article class="gap-card">
+          <h3>Typography relationship is not documented</h3>
+          <p>Poppins dominates the site, while the strongest logo mark carries a more traditional serif feel. That can be a strength, but only if the relationship is intentional.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Evidence</div>
+          <h2>Sources behind this kit</h2>
+        </div>
+        <p>
+          This page is based on the live website, the two supplied logo files, and the detailed audit
+          document in this folder.
+        </p>
+      </div>
+
+      <div class="source-grid">
+        <div class="source-list">
+          <div class="source-item">
+            <div>
+              <a href="wassp%20letterhead.png">wassp letterhead.png</a>
+              <span>Local emblem treatment with boot, hat, spur, and gold lettering.</span>
+            </div>
+            <div class="source-kind">Local asset</div>
+          </div>
+          <div class="source-item">
+            <div>
+              <a href="wassp%20horizontal%20logo.png">wassp horizontal logo.png</a>
+              <span>Horizontal lockup with serif wordmark, subtitle, and icon.</span>
+            </div>
+            <div class="source-kind">Local asset</div>
+          </div>
+          <div class="source-item">
+            <div>
+              <a href="https://www.wassp.org/" target="_blank" rel="noreferrer">WASSP Homepage</a>
+              <span>Primary reference for header, hero, footer, and token usage.</span>
+            </div>
+            <div class="source-kind">Live page</div>
+          </div>
+          <div class="source-item">
+            <div>
+              <a href="https://files.smartsites.parentsquare.com/4229/css2656.css" target="_blank" rel="noreferrer">Custom stylesheet</a>
+              <span>Main source for colors, type rules, nav styling, and button remaps.</span>
+            </div>
+            <div class="source-kind">CSS source</div>
+          </div>
+        </div>
+
+        <div class="source-list">
+          <div class="source-item">
+            <div>
+              <a href="https://www.wassp.org/47069_2" target="_blank" rel="noreferrer">About</a>
+              <span>Internal page title and stacked content layout reference.</span>
+            </div>
+            <div class="source-kind">Live page</div>
+          </div>
+          <div class="source-item">
+            <div>
+              <a href="https://www.wassp.org/13572_1" target="_blank" rel="noreferrer">Contact</a>
+              <span>Form styling, social icon, and CTA evidence.</span>
+            </div>
+            <div class="source-kind">Live page</div>
+          </div>
+          <div class="source-item">
+            <div>
+              <a href="https://www.wassp.org/13565_1" target="_blank" rel="noreferrer">Conferences</a>
+              <span>Featured-video pattern and hero CTA reference.</span>
+            </div>
+            <div class="source-kind">Live page</div>
+          </div>
+          <div class="source-item">
+            <div>
+              <a href="visual-brand-audit.md">Full markdown audit</a>
+              <span>The deeper written research and evidence log that this visual kit is based on.</span>
+            </div>
+            <div class="source-kind">Internal doc</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-band">
+        <strong>Note:</strong> the live navigation CSS references a background image asset, but direct
+        access to that image returned an access-denied response during research. The textured layer is
+        therefore represented here as a documented site behavior rather than a directly displayed asset.
+      </div>
+
+      <div class="footer-actions">
+        <a class="solid" href="visual-brand-audit.md">Read the full audit</a>
+        <a class="ghost" href="https://www.wassp.org/" target="_blank" rel="noreferrer">Review the live website</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
